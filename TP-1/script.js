@@ -2,7 +2,7 @@ const REGULAR_EXPRESION = {
     name: new RegExp("^[a-zA-Z]{1,20}$"),
     age:  new RegExp("^[0-9]{0,3}$"),
     email: new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@google.com|^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@iCloud.com|^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@outlook.com$"),
-    pass: new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$")
+    pass: new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$/)
 }
 
 function validateInfo(){
