@@ -26,7 +26,7 @@ function itemIsAdded(id){
 function printItems(){
     document.getElementById("agregados").innerHTML = ""
     agregados.forEach((item)=>{
-        document.getElementById("agregados").innerHTML = document.getElementById("agregados").innerHTML + '<div class="item"><div class="right floated content"><div onClick="removeItem('+item.id+')" class="ui button">Remove</div></div><div class="content">'+item.info+'</div></div>'
+        document.getElementById("agregados").innerHTML = document.getElementById("agregados").innerHTML + '<div class="item"><div class="right floated content"><div onClick="removeItem('+item.id+')" class="ui button">Remove</div><div onClick="subirPuesto('+item.id+')" class="ui button">Prioridad</div></div><div class="content">'+item.info+'</div></div>'
     }) 
 }
 
@@ -48,6 +48,18 @@ function addItem(id){
 function removeItem(id){
     agregados = agregados.filter(item => item.id !== id)
     printItems();
+}
+
+function subirPuesto(id){
+    let aux = agregados.filter(item => item.id !== id)
+    let itemAux
+    agregados.map(item => {if(item.id === id){ itemAux = item}})
+    agregados = []
+    console.log(agregados)
+    agregados.push(itemAux)
+    agregados = agregados.concat(aux);
+    printItems()
+
 }
     
 
