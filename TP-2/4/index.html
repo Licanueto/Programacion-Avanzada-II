@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button"
+        onclick="highligth()"
+        value = "Highligth words">
+    <br><br>
+    <p>Lorem 
+        <span class="myClass">ipsum dolor sit, amet consectetur</span> 
+        adipisicing elit. Molestias quidem
+        <span class="myClass"> at quod laborum corrupti aspernatur nihil, voluptate</span> 
+        facere, natus, quisquam in cupiditate alias sed quam nam earum exercitationem cumque excepturi!
+    </p>
+</body>
+<script>
+    function highligth(){
+        var spans = document.getElementsByClassName("myClass");
+        var spanArray = Array.from(spans)
+        spanArray.forEach(element => {
+            element.style.background = "yellow"
+        })
+    }
+</script>
+</html>
