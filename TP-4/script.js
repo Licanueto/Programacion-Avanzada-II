@@ -56,11 +56,23 @@ function add(id){
     console.log(cart);
 
 }
-
-function remove(id){
-    cartItems = cartItems.filter(item => {
-        item.product.id == id
+function sub(id){
+    cartItems.forEach(item =>{
+        if(item.product.id == id){
+            item.cant --;
+            if(item.cant == 0)
+            {
+                remove(id);
+            }
+        }
     })
+    updateCart();
+}
+function remove(id){
+    console.log(id)
+    var aux = cartItems.filter(item => item.product.id !== id);
+    cartItems = aux;
+    console.log(cartItems)
     updateCart();
 
 }
@@ -69,7 +81,7 @@ function updateCart(){
     var cart = document.getElementById("cart");
     cart.innerHTML = ""
     cartItems.forEach(item =>{
-        cart.innerHTML = cart.innerHTML + '<div class="item"><div class="right floated content">'+item.cant+'<div onClick="remove('+item.product.id+')" class="ui button">Remove</div></div><img class="ui avatar image" src="https://cdn1.cnet.com/img/hT4OfXVxYZrkgNlmWQ08QpABOaY=/1200x675/2018/09/27/a97c3fde-c8b0-46d5-83d5-15c18b1c2cb6/iphone-xs-max-product-analisis-review-5.jpg"><div class="content">'+item.product.name+'</div></div>'
+        cart.innerHTML = cart.innerHTML + '<div class="item"><div class="right floated content"><a class="ui tag label">'+item.product.price+'</a><div class="ui icon mini buttons"><button onClick="add('+item.product.id+')" class="ui blue button"><i class="plus icon"></i></button><button onclick="sub('+item.product.id+')" class="ui  button"><i class="minus  icon"></i></button><button onClick="remove('+item.product.id+')" class="ui red button"><i class="times icon"></i></button></div></div><div class="content"><a class="ui circular label">'+item.cant+'</a>'+item.product.name+'</div></div>'
     })
     var total = document.getElementById("total");
     total.innerHTML = "Total: $" + calcularTotal()
@@ -78,7 +90,7 @@ function updateCart(){
 function calcularTotal(){
     var total = 0;
     cartItems.forEach(item => {
-        total =+ item.product.price * item.cant;
+        total = total + (item.product.price * item.cant);
     })
     return total;
 }
