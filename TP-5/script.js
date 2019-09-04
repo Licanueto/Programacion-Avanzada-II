@@ -1,10 +1,13 @@
-var from = 0;
-var to = 11;
+const f = 0
+const t = 11
+
+var from = f;
+var to = t;
 
 getElements(from, to);
 getMax();
 
-function getMax(){
+function getMax() {
     fetch('https://utn-2019-avanzada2-tp5.herokuapp.com/records/total')
         .then(result => {
             return result.json();
@@ -34,43 +37,41 @@ function getElements(from, to) {
 }
 
 function next() {
-    if(to < total){
+    if (to < total) {
 
-    
-    from = from + 11;
-    if((total - from) > 11){
-        to = to + 11;
-    }else
-    {
-        console.log((total - from))
-        to = to + (total - from);
-    } 
-    console.log(from, to)
-    getElements(from, to);
-}
-else{
-    alert("no se puede ir mas adelante")
-}
-    
+
+        from = from + t;
+        if ((total - from) > t) {
+            to = to + t;
+        } else {
+            console.log((total - from))
+            to = to + (total - from);
+        }
+        console.log(from, to)
+        getElements(from, to);
+    }
+    else {
+        alert("You shall not pass")
+    }
+
 }
 
 function back() {
-    if (from > 0 & to > 11) {  
-        if((total - from) < 11)
-        { 
+    if (from > f & to > t) {
+        if ((total - from) < t) {
             to = to - (total - from)
-            from = from - 11;
+            from = from - t;
             console.log(from, to)
         }
-        else{
-            from = from - 11;
-            to = to - 11;
+        else {
+            from = from - t;
+            to = to - t;
         }
-       
+
         getElements(from, to);
     }
-    else{
-        alert("no se puede ir mas atras")
+    else {
+        alert("You shall not pass")
     }
 }
 
