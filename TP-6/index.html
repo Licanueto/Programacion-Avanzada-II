@@ -8,270 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
         integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
     <title>Document</title>
+
 </head>
 
 <body>
-    <div class="ui container">
+    <div class="ui container" style="margin-top: 10px">
         <div class="ui segment">
             <div class="ui form">
                 <div class="field">
                     <label>Titulo</label>
-                    <input type="text">
+                    <input id="post-title" type="text">
                 </div>
                 <div class="field">
                     <label>Comentario</label>
-                    <textarea rows="2"></textarea>
+                    <textarea id="post-body"rows="2"></textarea>
                 </div>
+                <button onClick="addPost()"  class="ui fluid button" type="submit">Postear</button>
             </div>
         </div>
     </div>
-        <div class="ui center aligned segment">
-            <div class="ui link cards">
-                <div class="ui card centered card">
-                    <div class="content">
-                        <div class="header">Matt Giampietro</div>
-                        <div class="meta">
-                            <a>Friends</a>
-                        </div>
-                        <div class="description">
-                            Matthew is an interior designer living in New York.
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <div class="ui comments">
-                            <h3 class="ui header">Comments</h3>
-                            <div class="comment">
-                                <div class="content">
-                                    <a class="author">Matt</a>
-                                    <div class="metadata">
-                                        <span class="date">Today at 5:42PM</span>
-                                    </div>
-                                    <div class="text">
-                                        How artistic!
-                                    </div>
-                                    <div class="actions">
-                                        <a class="reply">Reply</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <form class="ui reply form">
-                                <div class="ui fluid icon input">
-                                    <input type="text" placeholder="Comentar">
-                                    <i class="paper plane outline link icon"></i>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui card centered card">
-                        <div class="content">
-                            <div class="header">Matt Giampietro</div>
-                            <div class="meta">
-                                <a>Friends</a>
-                            </div>
-                            <div class="description">
-                                Matthew is an interior designer living in New York.
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <div class="ui comments">
-                                <h3 class="ui header">Comments</h3>
-                                <div class="comment">
-                                    <div class="content">
-                                        <a class="author">Matt</a>
-                                        <div class="metadata">
-                                            <span class="date">Today at 5:42PM</span>
-                                        </div>
-                                        <div class="text">
-                                            How artistic!
-                                        </div>
-                                        <div class="actions">
-                                            <a class="reply">Reply</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <form class="ui reply form">
-                                    <div class="ui fluid icon input">
-                                        <input type="text" placeholder="Comentar">
-                                        <i class="paper plane outline link icon"></i>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div><div class="ui card centered card">
-                            <div class="content">
-                                <div class="header">Matt Giampietro</div>
-                                <div class="meta">
-                                    <a>Friends</a>
-                                </div>
-                                <div class="description">
-                                    Matthew is an interior designer living in New York.
-                                </div>
-                            </div>
-                            <div class="extra content">
-                                <div class="ui comments">
-                                    <h3 class="ui header">Comments</h3>
-                                    <div class="comment">
-                                        <div class="content">
-                                            <a class="author">Matt</a>
-                                            <div class="metadata">
-                                                <span class="date">Today at 5:42PM</span>
-                                            </div>
-                                            <div class="text">
-                                                How artistic!
-                                            </div>
-                                            <div class="actions">
-                                                <a class="reply">Reply</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <form class="ui reply form">
-                                        <div class="ui fluid icon input">
-                                            <input type="text" placeholder="Comentar">
-                                            <i class="paper plane outline link icon"></i>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div><div class="ui card centered card">
-                                <div class="content">
-                                    <div class="header">Matt Giampietro</div>
-                                    <div class="meta">
-                                        <a>Friends</a>
-                                    </div>
-                                    <div class="description">
-                                        Matthew is an interior designer living in New York.
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <div class="ui comments">
-                                        <h3 class="ui header">Comments</h3>
-                                        <div class="comment">
-                                            <div class="content">
-                                                <a class="author">Matt</a>
-                                                <div class="metadata">
-                                                    <span class="date">Today at 5:42PM</span>
-                                                </div>
-                                                <div class="text">
-                                                    How artistic!
-                                                </div>
-                                                <div class="actions">
-                                                    <a class="reply">Reply</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <form class="ui reply form">
-                                            <div class="ui fluid icon input">
-                                                <input type="text" placeholder="Comentar">
-                                                <i class="paper plane outline link icon"></i>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div><div class="ui card centered card">
-                                    <div class="content">
-                                        <div class="header">Matt Giampietro</div>
-                                        <div class="meta">
-                                            <a>Friends</a>
-                                        </div>
-                                        <div class="description">
-                                            Matthew is an interior designer living in New York.
-                                        </div>
-                                    </div>
-                                    <div class="extra content">
-                                        <div class="ui comments">
-                                            <h3 class="ui header">Comments</h3>
-                                            <div class="comment">
-                                                <div class="content">
-                                                    <a class="author">Matt</a>
-                                                    <div class="metadata">
-                                                        <span class="date">Today at 5:42PM</span>
-                                                    </div>
-                                                    <div class="text">
-                                                        How artistic!
-                                                    </div>
-                                                    <div class="actions">
-                                                        <a class="reply">Reply</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="comment">
-                                                    <div class="content">
-                                                        <a class="author">Matt</a>
-                                                        <div class="metadata">
-                                                            <span class="date">Today at 5:42PM</span>
-                                                        </div>
-                                                        <div class="text">
-                                                            How artistic!
-                                                        </div>
-                                                        <div class="actions">
-                                                            <a class="reply">Reply</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="comment">
-                                                        <div class="content">
-                                                            <a class="author">Matt</a>
-                                                            <div class="metadata">
-                                                                <span class="date">Today at 5:42PM</span>
-                                                            </div>
-                                                            <div class="text">
-                                                                How artistic!
-                                                            </div>
-                                                            <div class="actions">
-                                                                <a class="reply">Reply</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                            <form class="ui reply form">
-                                                <div class="ui fluid icon input">
-                                                    <input type="text" placeholder="Comentar">
-                                                    <i class="paper plane outline link icon"></i>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ui card centered card">
-                                        <div class="content">
-                                            <div class="header">Matt Giampietro</div>
-                                            <div class="meta">
-                                                <a>Friends</a>
-                                            </div>
-                                            <div class="description">
-                                                Matthew is an interior designer living in New York.
-                                            </div>
-                                        </div>
-                                        <div class="extra content">
-                                            <div class="ui comments">
-                                                <h3 class="ui header">Comments</h3>
-                                                <div class="comment">
-                                                    <div class="content">
-                                                        <a class="author">Matt</a>
-                                                        <div class="metadata">
-                                                            <span class="date">Today at 5:42PM</span>
-                                                        </div>
-                                                        <div class="text">
-                                                            How artistic!
-                                                        </div>
-                                                        <div class="actions">
-                                                            <a class="reply">Reply</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <form class="ui reply form">
-                                                    <div class="ui fluid icon input">
-                                                        <input type="text" placeholder="Comentar">
-                                                        <i class="paper plane outline link icon"></i>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-            </div>
+    <div class="ui container" style="margin-top: 10px">
+        <div id="feed" class="ui aligned segment">
+
         </div>
+    </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
     integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
+<script src="script.js"></script>
 
 </html>
