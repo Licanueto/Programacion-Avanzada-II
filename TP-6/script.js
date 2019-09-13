@@ -34,10 +34,12 @@ async function loadPostAndComments(){
     posts = getComments(posts);
     var feed = document.getElementById("feed");
     feed.innerHTML = ""
+    console.log(posts)
     posts.forEach((item) => {
+        console.log("soy el post: ", posts[0]);
+        console.log("soy post.comments: ",item.comments)
         feed.innerHTML = feed.innerHTML + '<div class="ui card centered card"><div class="content"><div class="header">'+item.title+'</div><div class="meta"><a>'+item.date+'</a></div><div class="description">'+item.body+'</div></div><div class="extra content"><div class="ui comments"><h3 class="ui header">Comments</h3>';
-        console.log(item)
-        console.log(item.comments) 
+        console.log(Array.from(item))
         item.comments.forEach((comment) => {
             console.log(comment)
             feed.innerHTML = feed.innerHTML + '<div class="comment"><div class="content"><a class="author">'+comment.author+'</a><div class="metadata"><span class="date">'+comment.date+'</span></div><div class="text">'+comment.text+'</div></div></div><form onSubmit ="comment('+comment.post_id+')" class="ui reply form"><div class="ui fluid icon input"><input type="text" placeholder="Comentar"><i class="paper plane outline link icon"></i></div></form>'
@@ -58,10 +60,10 @@ function addPost(){
 }
 
 function addComment(id){
-    var text = document.getElementById().value
-
+    //var text = document.getElementById().value
+    var text = "soy un comentario"
     var request = new XMLHttpRequest();
-    var url = "https://utn2019-avanzada2-tp6.herokuapp.com/api/ /api/comments?post_id="+id+"&author=anonimo&text="+text;
+    var url = "https://utn2019-avanzada2-tp6.herokuapp.com/api/comments?post_id="+id+"&author=anonimo&text="+text;
     request.open("POST",url)
     request.send(null);
     loadPostAndComments();

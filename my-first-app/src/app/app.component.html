@@ -1,0 +1,18 @@
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Precio</th>
+  </tr>
+</thead>
+  <tbody>
+    <div *ngfor="let product of products">
+    <tr>
+      <td data-label="Nombre">{{ product.name }}</td>
+      <td data-label="Descripcion">{{ product.desc }}</td>
+      <td data-label="Precio">{{ product.price }}</td>
+    </tr>
+  </div>
+  </tbody>
+</table>
